@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="p-4 flex justify-between items-center shadow">
+      <h1 class="text-xl font-bold">MiniStore</h1>
+      <button
+        id="theme-toggle"
+        class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+      >
+        Toggle Dark Mode
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="flex flex-col items-center justify-center h-screen text-center px-4"
+    >
+      <h2 class="text-4xl md:text-6xl font-bold mb-4">Welcome to MiniStore</h2>
+      <p class="text-lg mb-6">Discover amazing products at great prices.</p>
+      <a
+        href="product.html"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Shop Now
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 border-t mt-8">© 2025 MiniStore</footer>
+    <script type="module" src="/dist/themeToggle.js"></script>
+  </body>
+</html>

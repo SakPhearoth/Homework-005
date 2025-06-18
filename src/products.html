@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Page</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <nav class="p-4 flex justify-between items-center shadow">
+      <a href="index.html" class="text-xl font-bold">MiniStore</a>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search..."
+        class="px-4 py-2 rounded"
+      />
+    </nav>
+
+    <main class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4" id="product-list">
+      <!-- Product cards injected here -->
+    </main>
+
+    <footer class="text-center py-4 border-t mt-8">© 2025 MiniStore</footer>
+    <script type="module" src="../dist/products.js"></script>
+  </body>
+</html>

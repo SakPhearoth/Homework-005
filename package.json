@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "axios": "^1.10.0",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "start": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+     "tsc": "tsc --watch"
+  }
+}
