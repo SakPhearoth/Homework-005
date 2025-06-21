@@ -3,38 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>MiniStore - Home</title>
     <link href="./output.css" rel="stylesheet" />
+    <!-- Tailwind Animate Fade-in -->
+    <style>
+      .animate-fade-in {
+        animation: fadeIn 1s ease-in-out both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
-  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+  >
     <!-- Navbar -->
-    <nav class="p-4 flex justify-between items-center shadow">
-      <h1 class="text-xl font-bold">MiniStore</h1>
+    <nav
+      class="p-4 flex justify-between items-center shadow-md bg-white dark:bg-gray-800"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="https://img.icons8.com/ios-filled/50/000000/shop.png"
+          alt="Logo"
+          class="w-6 h-6 dark:invert"
+        />
+        <h1 class="text-2xl font-bold">MiniStore</h1>
+      </div>
       <button
         id="theme-toggle"
-        class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+        class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
       >
-        Toggle Dark Mode
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m8.485-8.485l-.707.707M4.222 4.222l.707.707m12.728 0l-.707.707M4.222 19.778l.707-.707M21 12h-1M4 12H3"
+          />
+        </svg>
+        Toggle Theme
       </button>
     </nav>
 
     <!-- Hero Section -->
     <section
-      class="flex flex-col items-center justify-center h-screen text-center px-4"
+      class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen text-center md:text-left px-6 bg-gradient-to-b from-blue-100 dark:from-gray-800 to-white dark:to-gray-900 transition-colors duration-300 gap-12"
     >
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Welcome to MiniStore</h2>
-      <p class="text-lg mb-6">Discover amazing products at great prices.</p>
-      <a
-        href="product.html"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Shop Now
-      </a>
+      <!-- Text Content -->
+      <div class="md:w-1/2 animate-fade-in">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+          Discover Your Next Favorite Product
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          Hand-picked items delivered right to your doorstep. Shop smart, shop
+          fast, shop MiniStore.
+        </p>
+        <a
+          href="../products.html"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:shadow-lg transition-transform transform hover:scale-105 inline-block"
+        >
+          🛒 Shop Now
+        </a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="md:w-1/2">
+        <img
+          src="../assets/undraw_web-shopping_xd5k.png"
+          alt="Shopping Illustration"
+          class="w-full max-w-md mx-auto animate-fade-in"
+        />
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-4 border-t mt-8">© 2025 MiniStore</footer>
-    <script type="module" src="/dist/themeToggle.js"></script>
+     <footer class="text-center p-4 bg-white dark:bg-gray-800 mt-12">
+      <p>&copy; 2025 MiniStore. All rights reserved.</p>
+    </footer>
+
+    <!-- <script type="module" src="/dist/themeToggle.js"></script> -->
+    <script type="module" src="./dist/themeToggle.js"></script>
   </body>
 </html>

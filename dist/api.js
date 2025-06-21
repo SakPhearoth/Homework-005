@@ -7,12 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import axios from 'axios';
-const BASE_URL = 'https://fakestoreapi.com/products';
+const BASE_URL = 'https://dummyjson.com/products';
 export function fetchAllProducts() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield axios.get(BASE_URL);
-        return response.data;
+        return response.data.products;
     });
 }
 export function fetchProduct(id) {

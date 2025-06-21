@@ -17,4 +17,4 @@ function toggleTheme() {
     applyTheme(isDark ? 'light' : 'dark');
 }
 toggleBtn === null || toggleBtn === void 0 ? void 0 : toggleBtn.addEventListener('click', toggleTheme);
-console.log("Theme toggle script loaded");
+console.log("✅ Theme toggle loaded");

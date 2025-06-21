@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Page</title>
+    <link href="src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <nav
+      class="p-4 flex justify-between items-center shadow-md bg-white dark:bg-gray-800"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="https://img.icons8.com/ios-filled/50/000000/shop.png"
+          alt="Logo"
+          class="w-6 h-6 dark:invert"
+        />
+        <a href="src/index.html" class="text-2xl font-bold">MiniStore</a>
+      </div>
+
+      <input
+        id="search"
+        type="text"
+        placeholder="Search..."
+        class="px-4 py-2 rounded border-1"
+      />
+    </nav>
+
+    <main
+      class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      id="product-list"
+    >
+      <!-- Product cards injected here -->
+    </main>
+
+      <footer class="text-center p-4 bg-white dark:bg-gray-800 mt-12">
+      <p>&copy; 2025 MiniStore. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./dist/products.js"></script>
+  </body>
+</html>

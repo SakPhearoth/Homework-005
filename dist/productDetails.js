@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { fetchProduct } from './api';
+import { fetchProduct } from './api.js';
 const productDetailEl = document.getElementById('productDetail');
 const loadingSkeleton = document.getElementById('loadingSkeleton');
 function getProductIdFromURL() {
@@ -17,12 +17,12 @@ function getProductIdFromURL() {
 function renderProduct(product) {
     productDetailEl.innerHTML = `
     <div class="grid md:grid-cols-2 gap-6">
-      <img src="${product.image}" alt="${product.title}" class="w-full rounded shadow" />
+      <img src="${product.images[0]}" alt="${product.title}" class="w-full rounded shadow" />
       <div>
         <h2 class="text-3xl font-bold mb-2">${product.title}</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-4">${product.description}</p>
         <p class="text-2xl font-semibold mb-4">$${product.price}</p>
-        <a href="products.html" class="text-blue-600 hover:underline">← Back to products</a>
+        <a href="../products.html" class="text-blue-600 hover:underline">← Back to products</a>
       </div>
     </div>
   `;
@@ -31,17 +31,21 @@ function loadProduct() {
     return __awaiter(this, void 0, void 0, function* () {
         const id = getProductIdFromURL();
         if (!id) {
-            productDetailEl.innerHTML = '<p class="text-red-500">Product ID is missing.</p>';
+            productDetailEl.innerHTML = '<p class="text-red-500 text-center">Product ID is missing.</p>';
             return;
         }
+        loadingSkeleton.style.display = 'block';
+        productDetailEl.innerHTML = '';
         try {
             const product = yield fetchProduct(id);
             loadingSkeleton.style.display = 'none';
             renderProduct(product);
         }
         catch (error) {
-            productDetailEl.innerHTML = '<p class="text-red-500">Failed to load product data.</p>';
+            console.error('Error fetching product details:', error);
+            loadingSkeleton.style.display = 'none';
+            productDetailEl.innerHTML = '<p class="text-red-500 text-center">Failed to load product data.</p>';
         }
     });
 }
-loadProduct();
+document.addEventListener('DOMContentLoaded', loadProduct);

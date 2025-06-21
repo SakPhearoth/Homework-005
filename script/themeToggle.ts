@@ -1,7 +1,6 @@
 const toggleBtn = document.getElementById('theme-toggle') as HTMLElement;
 const html = document.documentElement;
 
-// Force light mode as default
 const savedTheme = localStorage.getItem('theme') || 'light';
 applyTheme(savedTheme);
 
@@ -20,4 +19,4 @@ function toggleTheme() {
 }
 
 toggleBtn?.addEventListener('click', toggleTheme);
-console.log("Theme toggle script loaded");
+console.log("✅ Theme toggle loaded");
